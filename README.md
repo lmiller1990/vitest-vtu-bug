@@ -1,6 +1,6 @@
-Reproduce a bug where `config` from Test Utils is modified in `globalSetup`, but doesn't seem to be persisted to the actual test.
+Reproduce a bug where `config` from Test Utils is modified in `globalSetup`, but doesn't seem to be persisted to the actual test. We have a feature where you can add anything to `config` (import from '@vue/test-0tils') and it's automatically merged with your local config when using Vue Test Utils. In Jest, it's common to do this in a setup file, especially for installing things like Vuetify, that all your components rely on.
 
-I'm not sure how Vitest handles `globalSetup`? Is it run in the same context as the actual specs?
+I'm not sure how Vitest handles `globalSetup`? Is it run in the same context as the actual specs? It seems different to Jest's `setupFiles`.
 
 This same example works fine in Jest.
 
